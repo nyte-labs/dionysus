@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: Dionysus
+  main:
+    banner-mode: off

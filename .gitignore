@@ -32,3 +32,6 @@ replay_pid*
 
 # Gradle data
 .gradle
+
+# Include the gradle wrapper
+!gradle/wrapper/gradle-wrapper.jar

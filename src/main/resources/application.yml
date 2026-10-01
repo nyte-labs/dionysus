@@ -1,5 +1,25 @@
 spring:
   application:
     name: Dionysus
+  cloud:
+    aws:
+      parameter-store:
+        enabled: true
+        region: us-east-2
+      region:
+        static: us-east-2
+  config:
+    import: optional:aws-parameterstore:/config/dionysus/
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    show-sql: false
   main:
     banner-mode: off
+  web:
+    error:
+      include-message: always
+      include-stacktrace: never
+      whitelabel:
+        enabled: false

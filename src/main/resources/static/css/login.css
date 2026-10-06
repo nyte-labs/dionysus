@@ -1,0 +1,12 @@
+.login-card {width: 100%;max-width: 420px;background: #FFFFFF05;border: 1px solid #FFFFFF14;border-radius: var(--radius-xl);padding: 2rem}
+.login-form {display: flex;flex-direction: column;gap: 1.2rem}
+.login-header {margin-bottom: 2rem;text-align: center}
+.login-page-wrapper {min-height: 600px;background: var(--bg-hero);display: flex;align-items: center;justify-content: center;padding: 2rem 1rem;font-family: var(--font-ui)}
+
+.logo-container {display: inline-flex;align-items: center;gap: 9px}
+.logo-container .nav-brand {font-size: 1.8rem}
+
+.input-group {display: flex;flex-direction: column;gap: var(--radius-md)}
+.form-options {display: flex;align-items: center;justify-content: space-between}
+
+.footer-text {display: flex;align-items: center;justify-content: center;gap: 1px;font-size: 13px;color: var(--text-muted);margin: 0}

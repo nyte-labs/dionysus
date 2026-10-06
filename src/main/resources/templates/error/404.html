@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Page not found</title>
+        <link rel="stylesheet" th:href="@{/css/base.css}">
+        <link rel="stylesheet" th:href="@{/css/login.css}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="login-page-wrapper">
+            <div class="login-card">
+                <div class="login-header">
+                    <div class="logo-container">
+                        <img th:src="@{/img/dionysus-small.png}"/>
+                        <span class="nav-brand">Dionysus</span>
+                    </div>
+                </div>
+
+                <div class="login-form">
+                    <p class="footer-text">We couldn't find that page.</p>
+                    <a th:href="@{/}" class="btn-primary" style="text-align: center; text-decoration: none;">Go home</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

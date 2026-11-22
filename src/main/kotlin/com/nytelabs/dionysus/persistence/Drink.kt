@@ -1,11 +1,6 @@
 package com.nytelabs.dionysus.persistence
 
-import jakarta.persistence.CascadeType
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.OneToMany
+import jakarta.persistence.*
 
 @Entity
 class Drink(
@@ -15,8 +10,8 @@ class Drink(
     val garnish: String,
     val name: String,
     val preparation: String,
-    val abv: Int,
-    val calories: Int,
+    val abv: Float,
+    val calories: Float,
 
     @OneToMany(mappedBy = "drink", cascade = [CascadeType.ALL], orphanRemoval = true)
     val ingredients: MutableSet<DrinkIngredient> = mutableSetOf()

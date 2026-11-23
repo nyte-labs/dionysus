@@ -15,8 +15,8 @@ class Drink(
     val garnish: String,
     val name: String,
     val preparation: String,
-    val abv: Int,
-    val calories: Int,
+    val abv: Float,
+    val calories: Float,
 
     @OneToMany(mappedBy = "drink", cascade = [CascadeType.ALL], orphanRemoval = true)
     val ingredients: MutableSet<DrinkIngredient> = mutableSetOf()

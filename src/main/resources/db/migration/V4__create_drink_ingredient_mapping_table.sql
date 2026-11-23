@@ -1,8 +1,8 @@
 CREATE TABLE drink_ingredient
 (
-    amount_ml     NUMERIC(4, 1)    NOT NULL,
-    drink_id      INTEGER          NOT NULL,
-    ingredient_id INTEGER          NOT NULL,
+    amount_ml     REAL    NOT NULL,
+    drink_id      INTEGER NOT NULL,
+    ingredient_id INTEGER NOT NULL,
     CONSTRAINT pk_drinkingredient PRIMARY KEY (drink_id, ingredient_id)
 );
 

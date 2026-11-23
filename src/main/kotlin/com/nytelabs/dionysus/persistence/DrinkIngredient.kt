@@ -6,7 +6,6 @@ import jakarta.persistence.Entity
 import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
 import jakarta.persistence.MapsId
-import java.math.BigDecimal
 
 @Entity
 class DrinkIngredient(
@@ -23,6 +22,6 @@ class DrinkIngredient(
     @JoinColumn("ingredient_id")
     val ingredient: Ingredient,
 
-    @Column("amount_ml", scale = 1, precision = 4)
-    val amountMl: BigDecimal,
+    @Column("amount_ml")
+    val amountMl: Float,
 )

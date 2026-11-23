@@ -21,7 +21,7 @@ class IngredientRepositoryTest @Autowired constructor(
     @Test
     fun `find by name - found`() {
         val saved = repository.save(
-            Ingredient(name = "test1", abv= 40, caloriesPer100Ml = 94)
+            Ingredient(name = "test1", abv = 40f, caloriesPerMl = 0.94f)
         )
 
         entityManager.flush()
@@ -31,8 +31,8 @@ class IngredientRepositoryTest @Autowired constructor(
 
         assertNotNull(found)
         assertEquals("test1", found!!.name)
-        assertEquals(40, found.abv)
-        assertEquals(94, found.caloriesPer100Ml)
+        assertEquals(40f, found.abv)
+        assertEquals(0.94f, found.caloriesPerMl)
     }
 
     @Test

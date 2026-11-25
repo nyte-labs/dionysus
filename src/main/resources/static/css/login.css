@@ -7,6 +7,6 @@
 .logo-container .nav-brand {font-size: 1.8rem}
 
 .input-group {display: flex;flex-direction: column;gap: var(--radius-md)}
-.form-options {display: flex;align-items: center;justify-content: space-between}
+.label-row {display: flex;align-items: baseline;justify-content: space-between}
 
 .footer-text {display: flex;align-items: center;justify-content: center;gap: 1px;font-size: 13px;color: var(--text-muted);margin: 0}

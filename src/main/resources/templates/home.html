@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dionysus</title>
+        <link rel="stylesheet" th:href="@{/css/base.css}">
+        <link rel="stylesheet" th:href="@{/css/home.css}">
+    </head>
+    <body>
+        <nav class="nav" aria-label="Main">
+            <div class="nav-left">
+                <a class="nav-brand" th:href="@{/}">
+                    <div class="nav-brand-mark">D</div>
+                    Dionysus
+                </a>
+                <div class="nav-links">
+                    <a th:href="@{/}" class="is-active">Home</a>
+                    <a th:href="@{/inventory}">Inventory</a>
+                </div>
+            </div>
+
+            <button type="button"
+                    class="mybar-toggle"
+                    id="mybar-toggle"
+                    th:classappend="${myBarActive} ? 'is-active'"
+                    th:aria-pressed="${myBarActive} ? 'true' : 'false'">
+                <span class="mybar-indicator"></span>
+                My bar
+            </button>
+        </nav>
+
+        <section class="hero" id="hero" th:classappend="${myBarActive} ? 'mybar-mode'">
+            <h1 class="hero-title">
+                What are you
+                <span class="hero-title-accent"
+                      id="hero-title-accent"
+                      th:text="${myBarActive} ? 'right now' : 'making'">making</span>
+                tonight?
+            </h1>
+        </section>
+
+        <section class="drink-grid" id="drink-grid" aria-label="Drinks">
+            <a th:each="drink : ${drinks.content}"
+               class="drink-card"
+               th:href="@{/drink(id=${drink.id})}">
+                <div class="drink-card-image-wrap">
+                    <img th:if="${cdnBaseUrl}"
+                         class="drink-card-image"
+                         th:src="${cdnBaseUrl + '/drinks/' + drink.getThumbnail() + '.jpg'}"
+                         th:alt="${drink.name}"
+                         loading="lazy">
+                    <div class="drink-card-overlay">
+                        <span class="drink-card-overlay-label">View recipe</span>
+                    </div>
+                </div>
+                <div class="drink-card-name" th:text="${drink.name}"></div>
+            </a>
+        </section>
+    </body>
+</html>

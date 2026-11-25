@@ -35,3 +35,7 @@ replay_pid*
 
 # Include the gradle wrapper
 !gradle/wrapper/gradle-wrapper.jar
+
+init.sql
+.env
+application-local.yaml

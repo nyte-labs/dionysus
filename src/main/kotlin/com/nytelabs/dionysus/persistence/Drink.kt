@@ -21,6 +21,10 @@ class Drink(
     @OneToMany(mappedBy = "drink", cascade = [CascadeType.ALL], orphanRemoval = true)
     val ingredients: MutableSet<DrinkIngredient> = mutableSetOf()
 ) {
+    fun getThumbnail(): String {
+        return name.lowercase().replace(" ", "_")
+    }
+
     override fun toString(): String {
         return "Drink(id=$id, garnish='$garnish', name='$name', preparation='$preparation', abv='$abv', calories='$calories')"
     }

@@ -1,0 +1,51 @@
+.mybar-toggle {display: flex;align-items: center;gap: 7px;padding: 6px 14px;border-radius: var(--radius-pill);border: 1px solid var(--border-mid);background: rgba(255, 255, 255, 0.04);color: var(--text-muted);font-family: var(--font-ui), sans-serif;font-size: .82rem;cursor: pointer;transition: all var(--ease);white-space: nowrap}
+.mybar-toggle:hover {border-color: rgba(0, 153, 204, 0.4);color: #AAA}
+.mybar-toggle.is-active {background: var(--accent-dim);border-color: var(--accent-border-mid);color: var(--accent)}
+
+.mybar-indicator {width: 7px;height: 7px;border-radius: 50%;background: #444;transition: background var(--ease);flex-shrink: 0}
+.mybar-toggle.is-active .mybar-indicator {background: var(--accent)}
+
+.hero {background: var(--bg-hero);padding: 4rem 2rem 3rem;text-align: center}
+.hero-title {font-family: var(--font-display), sans-serif;font-size: clamp(2rem, 5vw, 3.1rem);font-weight: 400;letter-spacing: .02em;line-height: 1.2;color: var(--text-primary)}
+.hero-title-accent {color: var(--accent);transition: color var(--ease)}
+.hero.mybar-mode .hero-title-accent {color: var(--accent-mybar)}
+
+.drink-grid {--cols: 2;display: grid;grid-template-columns: repeat(var(--cols), minmax(0, 1fr));gap: 1.5rem 1.25rem;max-width: 1400px;margin: 0 auto;padding: 2rem 2rem 3rem}
+.drink-card {display: block;color: inherit;text-decoration: none}
+.drink-card:focus-visible {outline: 2px solid var(--accent);outline-offset: 4px;border-radius: var(--radius-lg)}
+.drink-card-image-wrap {position: relative;aspect-ratio: 1 / 1;overflow: hidden;border-radius: var(--radius-lg);background: var(--bg-card);border: 1px solid var(--border-subtle)}
+.drink-card-image {display: block;width: 100%;height: 100%;object-fit: cover;transition: transform .3s ease, opacity .3s ease}
+.drink-card-overlay {position: absolute;inset: 0;display: flex;align-items: center;justify-content: center;opacity: 0;transition: opacity var(--ease)}
+.drink-card-overlay-label {padding: 6px 14px;border-radius: var(--radius-pill);background: rgba(17, 17, 17, 0.8);border: 1px solid var(--accent-border);color: var(--text-primary);font-size: .8rem;white-space: nowrap}
+.drink-card:hover .drink-card-image,
+.drink-card:focus-visible .drink-card-image {transform: scale(1.06);opacity: .55}
+.drink-card:hover .drink-card-overlay,
+.drink-card:focus-visible .drink-card-overlay {opacity: 1}
+.drink-card-name {margin-top: .65rem;text-align: center;font-size: .9rem;font-weight: 500;color: var(--text-primary);white-space: nowrap;overflow: hidden;text-overflow: ellipsis}
+.drink-card-ingredients {margin-top: .15rem;text-align: center;font-size: .75rem;line-height: 1.4;color: var(--text-muted);display: -webkit-box;-webkit-line-clamp: 2;line-clamp: 2;-webkit-box-orient: vertical;overflow: hidden}
+
+@media (min-width: 480px) {.drink-grid {--cols: 3}}
+@media (min-width: 800px) {.drink-grid {--cols: 4}}
+@media (min-width: 1100px) {.drink-grid {--cols: 6}}
+
+@media (prefers-reduced-motion: reduce) {
+    .drink-card-image {transition: none}
+    .drink-card:hover .drink-card-image,
+    .drink-card:focus-visible .drink-card-image {transform: none}
+}
+
+@media (max-width: 600px) {
+    .nav-left {gap: .75rem}
+    .nav-brand {font-size: 1.15rem}
+    .nav-links {gap: .75rem}
+    .mybar-toggle {padding: 6px 12px}
+    .hero {padding: 2.5rem 1rem 2rem}
+    .drink-grid {gap: 1.25rem 1rem;padding: 1.5rem 1rem 2.5rem}
+}
+
+@media (max-width: 340px) {
+    .nav-left {gap: .5rem}
+    .nav-brand {font-size: 1.05rem}
+    .nav-links {gap: .5rem}
+    .mybar-toggle {padding: 6px 10px}
+}

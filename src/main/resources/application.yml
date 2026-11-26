@@ -1,3 +1,5 @@
+dionysus:
+  cdnBaseUrl: https://d1tprc2jc0bnrs.cloudfront.net/dionysus/images
 spring:
   application:
     name: Dionysus
@@ -23,3 +25,8 @@ spring:
       include-stacktrace: never
       whitelabel:
         enabled: false
+    resources:
+      chain:
+        strategy:
+          content:
+            enabled: true
